@@ -1,0 +1,372 @@
+PS D:\CompSci - Learn\Rust\Simple Rust CLI Tools> cargo new rgrep
+     Created binary (application) `rgrep` package
+PS D:\CompSci - Learn\Rust\Simple Rust CLI Tools> cd grep                
+cd : Cannot find path 'D:\CompSci - Learn\Rust\Simple Rust CLI Tools\grep' because it does not exist.
+At line:1 char:1
++ cd grep
++ ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (D:\CompSci - Le... CLI Tools\grep:String) [Set-Location], ItemNotFoundException
+ 
+PS D:\CompSci - Learn\Rust\Simple Rust CLI Tools> cd rgrep
+PS D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep> cargo run -- the poem.txt
+   Compiling rgrep v0.1.0 (D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep)
+    Finished dev [unoptimized + debuginfo] target(s) in 2.31s                                                                                                                                    
+     Running `target\debug\rgrep.exe the poem.txt`
+Searching for the
+In file poem.txt
+thread 'main' panicked at src\main.rs:15:10:
+Should have been able to read the file: Os { code: 2, kind: NotFound, message: "The system cannot find the file specified." }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\rgrep.exe the poem.txt` (exit code: 101)
+PS D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep> cargo run -- the D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep\Cargo.toml
+    Finished dev [unoptimized + debuginfo] target(s) in 0.01s
+Searching for the
+In file D:\CompSci
+thread 'main' panicked at src\main.rs:15:10:
+Should have been able to read the file: Os { code: 2, kind: NotFound, message: "The system cannot find the file specified." }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\rgrep.exe the D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep\Cargo.toml` (exit code: 101)
+PS D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep> cargo run -- the D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep\Cargo.toml
+   Compiling rgrep v0.1.0 (D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep)
+warning: unused import: `std::fs`
+ --> src\main.rs:2:5
+  |
+2 | use std::fs;
+  |     ^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+warning: `rgrep` (bin "rgrep") generated 1 warning (run `cargo fix --bin "rgrep"` to apply 1 suggestion)
+    Finished dev [unoptimized + debuginfo] target(s) in 1.16s
+     Running `target\debug\rgrep.exe the D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep\Cargo.toml`
+Searching for the
+In file D:\CompSci
+PS D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep> cargo run -- the D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep\Cargo.toml
+   Compiling rgrep v0.1.0 (D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep)
+warning: unused import: `std::fs`
+ --> src\main.rs:2:5
+  |
+2 | use std::fs;
+  |     ^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+warning: `rgrep` (bin "rgrep") generated 1 warning (run `cargo fix --bin "rgrep"` to apply 1 suggestion)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.99s
+     Running `target\debug\rgrep.exe the D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep\Cargo.toml`
+Searching for the
+In file D:\CompSci
+In file ["target\\debug\\rgrep.exe", "the", "D:\\CompSci", "-", "Learn\\Rust\\Simple", "Rust", "CLI", "Tools\\rgrep\\Cargo.toml"]
+PS D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep> cargo run -- the rgrep\Cargo.toml
+warning: unused import: `std::fs`
+ --> src\main.rs:2:5
+  |
+2 | use std::fs;
+  |     ^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+warning: `rgrep` (bin "rgrep") generated 1 warning (run `cargo fix --bin "rgrep"` to apply 1 suggestion)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.03s
+     Running `target\debug\rgrep.exe the rgrep\Cargo.toml`
+Searching for the
+In file rgrep\Cargo.toml
+In file ["target\\debug\\rgrep.exe", "the", "rgrep\\Cargo.toml"]
+PS D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep> cargo run -- the poem.txt
+   Compiling rgrep v0.1.0 (D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep)
+error[E0433]: failed to resolve: use of undeclared crate or module `fs`
+   |
+12 |     let contents = fs::read_to_string(file_path)
+   |                    ^^ use of undeclared crate or module `fs`
+   |
+help: consider importing this module
+   |
+1  + use std::fs;
+   |
+For more information about this error, try `rustc --explain E0433`.
+error: could not compile `rgrep` (bin "rgrep") due to previous error
+PS D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep> cargo run -- the poem.txt
+   Compiling rgrep v0.1.0 (D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep)
+    Finished dev [unoptimized + debuginfo] target(s) in 1.06s
+     Running `target\debug\rgrep.exe the poem.txt`
+Searching for the
+In file poem.txt
+Should have been able to read the file: Os { code: 2, kind: NotFound, message: "The system cannot find the file specified." }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\rgrep.exe the poem.txt` (exit code: 101)
+PS D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep> cargo run -- the rgrep\src\poem.txt
+    Finished dev [unoptimized + debuginfo] target(s) in 0.01s
+     Running `target\debug\rgrep.exe the rgrep\src\poem.txt`
+Searching for the
+In file rgrep\src\poem.txt
+thread 'main' panicked at src\main.rs:14:10:
+Should have been able to read the file: Os { code: 3, kind: NotFound, message: "The system cannot find the path specified." }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\rgrep.exe the rgrep\src\poem.txt` (exit code: 101)
+PS D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep> cargo run -- the D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep\src\poem.txt
+    Finished dev [unoptimized + debuginfo] target(s) in 0.01s
+     Running `target\debug\rgrep.exe the D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep\src\poem.txt`
+Searching for the
+In file D:\CompSci
+thread 'main' panicked at src\main.rs:14:10:
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\rgrep.exe the D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep\src\poem.txt` (exit code: 101)
+PS D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep> cargo run -- the rgrep\src\poem.txt
+   Compiling rgrep v0.1.0 (D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep)
+error[E0369]: cannot add `&String` to `&str`
+  --> src\main.rs:13:88
+   |
+13 |     let contents = fs::read_to_string(r"D:\CompSci - Learn\Rust\Simple Rust CLI Tools\"+file_path)
+   |                                       -------------------------------------------------^--------- &String
+   |                                       |                                                |
+   |                                       |                                                `+` cannot be used to concatenate two `&str` strings
+   |                                       &str
+   |
+   = note: string concatenation requires an owned `String` on the left
+help: create an owned `String` from a string reference
+   |
+   |                                                                                        +++++++++++
+
+For more information about this error, try `rustc --explain E0369`.
+error: could not compile `rgrep` (bin "rgrep") due to previous error
+PS D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep> cargo run -- the rgrep\src\poem.txt
+   Compiling rgrep v0.1.0 (D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep)
+    Finished dev [unoptimized + debuginfo] target(s) in 1.00s
+     Running `target\debug\rgrep.exe the rgrep\src\poem.txt`
+Searching for the
+With text:
+I'm nobody! Who are you?
+Are you nobody, too?
+Then there's a pair of us - don't tell!
+They'd banish us, you know.
+
+How dreary to be somebody!
+How public, like a frog
+To tell your name the livelong day
+To an admiring bog!
+
+PS D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep> cargo run -- the rgrep\src\poem.txt
+   Compiling rgrep v0.1.0 (D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep)
+error[E0425]: cannot find value `file_path` in this scope
+   |
+12 |     let contents = fs::read_to_string(r"D:\CompSci - Learn\Rust\Simple Rust CLI Tools\".to_owned()+file_path)
+   |                                                                                                    ^^^^^^^^^ not found in this scope
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `rgrep` (bin "rgrep") due to previous error
+PS D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep> cargo run -- the rgrep\src\poem.txt
+   Compiling rgrep v0.1.0 (D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep)
+error[E0308]: mismatched types
+  --> src\main.rs:12:100
+   |
+12 |     let contents = fs::read_to_string(r"D:\CompSci - Learn\Rust\Simple Rust CLI Tools\".to_owned()+config.file_path)
+   |                                                                                                    ^^^^^^^^^^^^^^^^ expected `&str`, found `String`
+   |
+help: consider borrowing here
+   |
+   |                                                                                                    +
+
+For more information about this error, try `rustc --explain E0308`.
+error: could not compile `rgrep` (bin "rgrep") due to previous error
+PS D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep> cargo run -- the rgrep\src\poem.txt
+   Compiling rgrep v0.1.0 (D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep)
+    Finished dev [unoptimized + debuginfo] target(s) in 1.04s
+     Running `target\debug\rgrep.exe the rgrep\src\poem.txt`
+Searching for the
+In file rgrep\src\poem.txt
+With text:
+I'm nobody! Who are you?
+Are you nobody, too?
+Then there's a pair of us - don't tell!
+They'd banish us, you know.
+
+How public, like a frog
+To tell your name the livelong day
+To an admiring bog!
+
+PS D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep> cargo test
+   Compiling rgrep v0.1.0 (D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep)
+error[E0308]: mismatched types
+  --> src\lib.rs:27:15
+   |
+27 |             + config.file_path,
+   |
+help: consider borrowing here
+   |
+27 |             + &config.file_path,
+   |               +
+
+For more information about this error, try `rustc --explain E0308`.
+error: could not compile `rgrep` (lib test) due to previous error
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `rgrep` (lib) due to previous error
+PS D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep> cargo test
+   Compiling rgrep v0.1.0 (D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep)
+error[E0433]: failed to resolve: use of undeclared crate or module `minigrep`
+  --> src\main.rs:17:21
+   |
+17 |     if let Err(e) = minigrep::run(config) {
+   |                     ^^^^^^^^ use of undeclared crate or module `minigrep`
+
+For more information about this error, try `rustc --explain E0433`.
+error: could not compile `rgrep` (bin "rgrep" test) due to previous error
+warning: build failed, waiting for other jobs to finish...
+   Compiling rgrep v0.1.0 (D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep)
+    Finished test [unoptimized + debuginfo] target(s) in 0.73s
+     Running unittests src\lib.rs (target\debug\deps\rgrep-0cb3b221ccca5519.exe)
+
+running 1 test
+test tests::one_result ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\main.rs (target\debug\deps\rgrep-7f3fea51230e062e.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests rgrep
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Compiling rgrep v0.1.0 (D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep)
+    Finished test [unoptimized + debuginfo] target(s) in 1.17s
+     Running unittests src\lib.rs (target\debug\deps\rgrep-0cb3b221ccca5519.exe)
+
+running 1 test
+test tests::test_1 ... ok
+
+
+     Running unittests src\main.rs (target\debug\deps\rgrep-7f3fea51230e062e.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+   Doc-tests rgrep
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+PS D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep>  cargo run -- frog poem.txt
+    Finished dev [unoptimized + debuginfo] target(s) in 1.23s
+     Running `target\debug\rgrep.exe frog poem.txt`
+Searching for frog
+In file poem.txt
+Application error: The system cannot find the file specified. (os error 2)
+error: process didn't exit successfully: `target\debug\rgrep.exe frog poem.txt` (exit code: 1)
+PS D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep> cargo run -- the rgrep\src\poem.txt
+    Finished dev [unoptimized + debuginfo] target(s) in 0.01s
+     Running `target\debug\rgrep.exe the rgrep\src\poem.txt`
+In file rgrep\src\poem.txt
+Application error: The system cannot find the path specified. (os error 3)
+error: process didn't exit successfully: `target\debug\rgrep.exe the rgrep\src\poem.txt` (exit code: 1)
+PS D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep> cargo run -- the rgrep\src\poem.txt
+   Compiling rgrep v0.1.0 (D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep)
+    Finished dev [unoptimized + debuginfo] target(s) in 1.37s
+     Running `target\debug\rgrep.exe the rgrep\src\poem.txt`
+Searching for the
+In file rgrep\src\poem.txt
+Then there's a pair of us - don't tell!
+PS D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep> cargo run -- the rgrep\src\poem.txt
+   Compiling rgrep v0.1.0 (D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep)
+    Finished dev [unoptimized + debuginfo] target(s) in 1.05s
+     Running `target\debug\rgrep.exe the rgrep\src\poem.txt`
+Searching for the
+In file rgrep\src\poem.txt
+
+Results
+Then there's a pair of us - don't tell!
+To tell your name the livelong day
+PS D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep> cargo run -- the rgrep\src\poem.txt
+   Compiling rgrep v0.1.0 (D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.74s
+     Running `target\debug\rgrep.exe the rgrep\src\poem.txt`
+Searching for the
+In file rgrep\src\poem.txt
+
+Results:
+--------------------------------------
+Then there's a pair of us - don't tell!
+To tell your name the livelong day
+PS D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep> cargo test
+   Compiling rgrep v0.1.0 (D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep)
+     Running unittests src\lib.rs (target\debug\deps\rgrep-0cb3b221ccca5519.exe)
+
+running 3 tests
+test tests::case_insensitive ... ok
+test tests::case_sensitive ... ok
+test tests::test_1 ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.35s
+
+     Running unittests src\main.rs (target\debug\deps\rgrep-7f3fea51230e062e.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests rgrep
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+PS D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep> cargo test
+   Compiling rgrep v0.1.0 (D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep)
+     Running unittests src\lib.rs (target\debug\deps\rgrep-0cb3b221ccca5519.exe)
+
+running 3 tests
+test tests::case_insensitive ... ok
+test tests::case_sensitive ... ok
+test tests::test_1 ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests rgrep
+
+running 0 tests
+
+PS D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep> $Env:IGNORE_CASE=1; cargo run -- to rgrep\src\poem.txt
+   Compiling rgrep v0.1.0 (D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.69s
+     Running `target\debug\rgrep.exe to rgrep\src\poem.txt`
+Searching for to
+Are you nobody, too?
+How dreary to be somebody!
+To tell your name the livelong day
+To an admiring bog!
+PS D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep> $Env:IGNORE_CASE=0; cargo run -- to rgrep\src\poem.txt
+    Finished dev [unoptimized + debuginfo] target(s) in 0.01s
+     Running `target\debug\rgrep.exe to rgrep\src\poem.txt`
+Searching for to
+Are you nobody, too?
+How dreary to be somebody!
+To tell your name the livelong day
+To an admiring bog!
+PS D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep> Remove-Item Env:IGNORE_CASE
+PS D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep> cargo run -- to rgrep\src\poem.txt
+    Finished dev [unoptimized + debuginfo] target(s) in 0.02s
+     Running `target\debug\rgrep.exe to rgrep\src\poem.txt`
+Searching for to
+In file rgrep\src\poem.txt
+Are you nobody, too?
+How dreary to be somebody!
+PS D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep> $Env:IGNORE_CASE=1; cargo run -- to rgrep\src\poem.txt
+    Finished dev [unoptimized + debuginfo] target(s) in 0.02s
+     Running `target\debug\rgrep.exe to rgrep\src\poem.txt`
+Searching for to
+In file rgrep\src\poem.txt
+Are you nobody, too?
+How dreary to be somebody!
+To tell your name the livelong day
+To an admiring bog!
+PS D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep> $Env:IGNORE_CASE=1; cargo run -- to rgrep\src\poem.txt > op.txt
+    Finished dev [unoptimized + debuginfo] target(s) in 0.01s
+     Running `target\debug\rgrep.exe to rgrep\src\poem.txt`
+PS D:\CompSci - Learn\Rust\Simple Rust CLI Tools\rgrep> 
